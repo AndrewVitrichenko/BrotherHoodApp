@@ -19,11 +19,11 @@ public class Brother implements Parcelable {
     @Getter private String brotherCrossSemester;
     @Getter private String brotherFunFact;
 
-    public Brother(int brotherId, String brotherName, String brotherPicture, String brotherWhyJoin, String brotherMajor, String brotherCrossSemester, String brotherFunFact) {
+    public Brother(int brotherId, String brotherName, String brotherWhyJoin, String brotherPicture, String brotherMajor, String brotherCrossSemester, String brotherFunFact) {
         this.brotherId = brotherId;
         this.brotherName = brotherName;
-        this.brotherPicture = brotherPicture;
         this.brotherWhyJoin = brotherWhyJoin;
+        this.brotherPicture = brotherPicture;
         this.brotherMajor = brotherMajor;
         this.brotherCrossSemester = brotherCrossSemester;
         this.brotherFunFact = brotherFunFact;

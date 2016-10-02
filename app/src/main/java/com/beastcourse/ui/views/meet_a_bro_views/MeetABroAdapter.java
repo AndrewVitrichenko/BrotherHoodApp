@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
+import com.beastcourse.ui.activities.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -19,12 +20,12 @@ import lombok.Getter;
 
 public class MeetABroAdapter extends RecyclerView.Adapter<MeetABroViewHolder> implements View.OnClickListener {
     private LayoutInflater inflater;
-    private AppCompatActivity activity;
+    private BaseActivity activity;
     private OnBrotherClickedListener listener;
     @Getter
     private ArrayList<Brother> brothers;
 
-    public MeetABroAdapter(OnBrotherClickedListener listener, AppCompatActivity activity) {
+    public MeetABroAdapter(OnBrotherClickedListener listener, BaseActivity activity) {
         this.listener = listener;
         this.activity = activity;
         inflater = activity.getLayoutInflater();
@@ -34,6 +35,7 @@ public class MeetABroAdapter extends RecyclerView.Adapter<MeetABroViewHolder> im
     @Override
     public MeetABroViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View listView = inflater.inflate(R.layout.list_meet_a_bro, parent, false);
+        listView.setOnClickListener(this);
         return new MeetABroViewHolder(listView);
     }
 

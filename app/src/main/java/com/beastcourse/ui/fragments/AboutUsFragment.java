@@ -1,22 +1,18 @@
 package com.beastcourse.ui.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.beastcourse.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Andrey on 29.09.2016.
  */
 
-public class AboutUsFragment extends Fragment {
+public class AboutUsFragment extends BaseFragment {
 
 
     public static AboutUsFragment newInstance(){

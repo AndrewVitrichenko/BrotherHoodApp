@@ -18,6 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors{
+        inmemory{
+            applicationId "com.beastcourse.inmemory"
+        }
+        live{
+            applicationId "com.beastcourse.live"
+        }
+    }
 }
 
 dependencies {
@@ -30,4 +39,5 @@ dependencies {
     apt "org.projectlombok:lombok:1.12.6"
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.squareup:otto:1.3.8'
 }
