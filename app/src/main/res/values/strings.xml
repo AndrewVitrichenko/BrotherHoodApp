@@ -3,4 +3,9 @@
     <string name="about_us">About us!</string>
     <string name="rush">Rush!</string>
     <string name="meet_a_bro">Meet a Bro!</string>
+    <string name="why_joined_header">Why joined?</string>
+
+    <string name="fun_fact_intro">Fun fact : %1$s</string>
+    <string name="crossed_intro">Joined : %1$s</string>
+    <string name="major_intro">Major : %1$s</string>
 </resources>

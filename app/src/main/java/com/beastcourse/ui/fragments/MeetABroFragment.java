@@ -1,10 +1,10 @@
 package com.beastcourse.ui.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +13,7 @@ import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.activities.BaseActivity;
+import com.beastcourse.ui.activities.PracticeActivity;
 import com.beastcourse.ui.views.meet_a_bro_views.MeetABroAdapter;
 import com.squareup.otto.Subscribe;
 
@@ -53,7 +54,8 @@ public class MeetABroFragment extends BaseFragment implements MeetABroAdapter.On
 
     @Override
     public void onBrotherClicked(Brother brother) {
-        Log.i("MeetABroFragment", "Brother " + brother.getBrotherName() + "was clicked");
+        Intent intent = PracticeActivity.newIntent(getActivity(),brother);
+        startActivity(intent);
     }
 
     @Subscribe

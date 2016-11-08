@@ -8,8 +8,14 @@ import android.widget.ProgressBar;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+
+import java.net.UnknownHostException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,20 +39,22 @@ public class MeetABroViewHolder extends RecyclerView.ViewHolder {
 
     public void populate(Context context, Brother brother){
         itemView.setTag(brother);
-        Picasso.with(context).load(brother.getBrotherPicture())
-                    .fit()
-                    .centerCrop()
-                    .into(brotherPicture, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            brotherProgressBar.setVisibility(View.GONE);
-                        }
+        Glide.with(context).load(brother.getBrotherPicture()).listener(new RequestListener<String, GlideDrawable>() {
+            @Override
+            public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                if(e instanceof UnknownHostException)
+                    brotherProgressBar.setVisibility(View.VISIBLE);
+                return false;
+            }
 
-                        @Override
-                        public void onError() {
-
-                        }
-                    });
+            @Override
+            public boolean onResourceReady(GlideDrawable resource, String model,
+                                           Target<GlideDrawable> target,
+                                           boolean isFromMemoryCache, boolean isFirstResource) {
+                brotherProgressBar.setVisibility(View.GONE);
+                return false;
+            }
+        }).fitCenter().centerCrop().into(brotherPicture);
     }
 
 }
