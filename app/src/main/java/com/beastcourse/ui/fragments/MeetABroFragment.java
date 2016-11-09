@@ -13,6 +13,7 @@ import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.activities.BaseActivity;
+import com.beastcourse.ui.activities.BrotherPagerActivity;
 import com.beastcourse.ui.activities.PracticeActivity;
 import com.beastcourse.ui.views.meet_a_bro_views.MeetABroAdapter;
 import com.squareup.otto.Subscribe;
@@ -54,7 +55,7 @@ public class MeetABroFragment extends BaseFragment implements MeetABroAdapter.On
 
     @Override
     public void onBrotherClicked(Brother brother) {
-        Intent intent = PracticeActivity.newIntent(getActivity(),brother);
+        Intent intent = BrotherPagerActivity.newIntent(getActivity(),brother);
         startActivity(intent);
     }
 

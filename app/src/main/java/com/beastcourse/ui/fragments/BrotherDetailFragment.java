@@ -49,7 +49,7 @@ public class BrotherDetailFragment extends BaseFragment {
     ImageView brotherPicture;
 
     private Brother brother;
-    private final String BROTHER_EXTRA_INFO = "BROTHER_EXTRA_INFO";
+    public static final String BROTHER_EXTRA_INFO = "BROTHER_EXTRA_INFO";
 
 
     @Override
@@ -66,14 +66,18 @@ public class BrotherDetailFragment extends BaseFragment {
         return rootView;
     }
 
-    public static BrotherDetailFragment newInstance(){
-        return new BrotherDetailFragment();
+    public static BrotherDetailFragment newInstance(Brother brother){
+        Bundle arguments = new Bundle();
+        arguments.putParcelable(BROTHER_EXTRA_INFO,brother);
+        BrotherDetailFragment brotherDetailFragment = new BrotherDetailFragment();
+        brotherDetailFragment.setArguments(arguments);
+        return brotherDetailFragment;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        brother = getActivity().getIntent().getParcelableExtra(BROTHER_EXTRA_INFO);
+        brother = getArguments().getParcelable(BROTHER_EXTRA_INFO);
 
     }
 
