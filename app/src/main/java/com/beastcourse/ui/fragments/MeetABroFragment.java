@@ -14,7 +14,6 @@ import com.beastcourse.entities.Brother;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.activities.BaseActivity;
 import com.beastcourse.ui.activities.BrotherPagerActivity;
-import com.beastcourse.ui.activities.PracticeActivity;
 import com.beastcourse.ui.views.meet_a_bro_views.MeetABroAdapter;
 import com.squareup.otto.Subscribe;
 

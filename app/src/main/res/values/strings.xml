@@ -8,4 +8,7 @@
     <string name="fun_fact_intro">Fun fact : %1$s</string>
     <string name="crossed_intro">Joined : %1$s</string>
     <string name="major_intro">Major : %1$s</string>
+    
+    <string name="intro_header">Introduction</string>
+    <string name="intro_body">This app was made by me and its super awesome!</string>
 </resources>
