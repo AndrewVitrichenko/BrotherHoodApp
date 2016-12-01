@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * Created by Andrey on 09.11.2016.
  */
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PUBLIC,suppressConstructorProperties = true)
 public class EventCard {
 
     @Getter private int eventId;
