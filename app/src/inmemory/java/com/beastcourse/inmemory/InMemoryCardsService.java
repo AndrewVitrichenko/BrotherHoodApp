@@ -49,7 +49,7 @@ public class InMemoryCardsService extends BaseInMemory {
         response.brotherHoodCards = new ArrayList<>();
 
         response.brotherHoodCards.add(new EventCard(
-                1,
+                3,
                 "BrotherHood Event 1",
                 "BrotherHood Event 1`s description",
                 "http://www.gravatar.com/avatar/" + 1 + "?id=identicon",
@@ -58,7 +58,7 @@ public class InMemoryCardsService extends BaseInMemory {
         ));
 
         response.brotherHoodCards.add(new EventCard(
-                2,
+                4,
                 "BrotherHood Event 2",
                 "BrotherHood Event 2`s description",
                 "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
@@ -75,7 +75,7 @@ public class InMemoryCardsService extends BaseInMemory {
         response.socialCards = new ArrayList<>();
 
         response.socialCards.add(new EventCard(
-                1,
+                5,
                 "Social Event 1",
                 "Social Event 1`s description",
                 "http://www.gravatar.com/avatar/" + 1 + "?id=identicon",
@@ -84,7 +84,7 @@ public class InMemoryCardsService extends BaseInMemory {
         ));
 
         response.socialCards.add(new EventCard(
-                2,
+                6,
                 "Social Event 2",
                 "Social Event 2`s description",
                 "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",

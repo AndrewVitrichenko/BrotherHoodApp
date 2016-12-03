@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.beastcourse.R;
+import com.beastcourse.R2;
 import com.beastcourse.entities.Brother;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.activities.BaseActivity;
@@ -33,19 +34,19 @@ import butterknife.ButterKnife;
 
 public class BrotherDetailFragment extends BaseFragment {
 
-    @BindView(R.id.fragment_brother_details_ProgressBar)
+    @BindView(R2.id.fragment_brother_details_ProgressBar)
     ProgressBar progressBar;
-    @BindView(R.id.fragment_brother_detail_brotherCrossed)
+    @BindView(R2.id.fragment_brother_detail_brotherCrossed)
     TextView brotherCrossed;
-    @BindView(R.id.fragment_brother_detail_brotherFunFact)
+    @BindView(R2.id.fragment_brother_detail_brotherFunFact)
     TextView brotherFunFact;
-    @BindView(R.id.fragment_brother_detail_brotherMajor)
+    @BindView(R2.id.fragment_brother_detail_brotherMajor)
     TextView brotherMajor;
-    @BindView(R.id.fragment_brother_detail_brotherName)
+    @BindView(R2.id.fragment_brother_detail_brotherName)
     TextView brotherName;
-    @BindView(R.id.fragment_brother_detail_whyJoined)
+    @BindView(R2.id.fragment_brother_detail_whyJoined)
     TextView brotherWhyJoined;
-    @BindView(R.id.fragment_brother_details_picture)
+    @BindView(R2.id.fragment_brother_details_picture)
     ImageView brotherPicture;
 
     private Brother brother;

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.beastcourse.R;
+import com.beastcourse.R2;
 import com.beastcourse.entities.EventCard;
 import com.beastcourse.services.EventCardService;
 import com.beastcourse.ui.activities.BaseActivity;
@@ -31,7 +32,7 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
     private ArrayList<EventCard> brotherHoodCards;
     private ArrayList<EventCard> socialCards;
 
-    @BindView(R.id.fragment_about_us_recyclerView)
+    @BindView(R2.id.fragment_about_us_recyclerView)
     RecyclerView recyclerView;
 
     private AboutUsAdapter adapter;

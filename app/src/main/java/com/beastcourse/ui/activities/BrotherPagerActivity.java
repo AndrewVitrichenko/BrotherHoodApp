@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.beastcourse.R;
+import com.beastcourse.R2;
 import com.beastcourse.entities.Brother;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.fragments.BrotherDetailFragment;
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 
 public class BrotherPagerActivity extends BaseActivity {
 
-    @BindView(R.id.activity_brother_pager)
+    @BindView(R2.id.activity_brother_pager_viewPager)
     ViewPager brotherViewPager;
 
 

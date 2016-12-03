@@ -8,6 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.beastcourse.R;
+import com.beastcourse.R2;
 import com.beastcourse.entities.EventCard;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -25,15 +26,15 @@ import butterknife.ButterKnife;
 
 public class CommunityServiceViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.list_event_card_eventName)
+    @BindView(R2.id.list_event_card_eventName)
     TextView eventName;
-    @BindView(R.id.list_event_card_eventDescription)
+    @BindView(R2.id.list_event_card_eventDescription)
     TextView eventDescription;
-    @BindView(R.id.list_event_card_eventType)
+    @BindView(R2.id.list_event_card_eventType)
     ImageView eventType;
-    @BindView(R.id.list_event_card_imageView)
+    @BindView(R2.id.list_event_card_imageView)
     ImageView eventImage;
-    @BindView(R.id.list_event_card_progressBar)
+    @BindView(R2.id.list_event_card_progressBar)
     ProgressBar progressBar;
 
     public CommunityServiceViewHolder(View itemView) {

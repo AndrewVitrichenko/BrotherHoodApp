@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.beastcourse.R;
+import com.beastcourse.R2;
 import com.beastcourse.entities.Brother;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -26,9 +27,9 @@ import butterknife.ButterKnife;
 
 public class MeetABroViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.list_meet_a_bro_ImageView)
+    @BindView(R2.id.list_meet_a_bro_ImageView)
     ImageView brotherPicture;
-    @BindView(R.id.list_meet_a_bro_ProgressBar)
+    @BindView(R2.id.list_meet_a_bro_ProgressBar)
     ProgressBar brotherProgressBar;
 
 
