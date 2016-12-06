@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.beastcourse.R;
-import com.beastcourse.R2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,7 +15,7 @@ import butterknife.ButterKnife;
 
 public class AboutUsListHeaderViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R2.id.simple_header_textView)
+    @BindView(R.id.simple_header_textView)
     TextView headerText;
 
     public AboutUsListHeaderViewHolder(View itemView) {

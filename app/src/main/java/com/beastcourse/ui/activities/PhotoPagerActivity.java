@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.beastcourse.R;
-import com.beastcourse.R2;
 import com.beastcourse.entities.EventCard;
 import com.beastcourse.entities.EventPicture;
 import com.beastcourse.services.EventPhotoService;
@@ -26,7 +25,7 @@ import butterknife.ButterKnife;
 
 public class PhotoPagerActivity extends BaseActivity {
 
-    @BindView(R2.id.activity_photo_pager_viewPager)
+    @BindView(R.id.activity_photo_pager_viewPager)
     ViewPager viewPager;
 
     private ArrayList<EventPicture> mEventPhotos;

@@ -1,5 +1,6 @@
 package com.beastcourse.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.beastcourse.R;
-import com.beastcourse.R2;
 import com.beastcourse.entities.EventCard;
 import com.beastcourse.services.EventCardService;
 import com.beastcourse.ui.activities.BaseActivity;
+import com.beastcourse.ui.activities.PhotoPagerActivity;
 import com.beastcourse.ui.views.about_us_views.AboutUsAdapter;
 import com.squareup.otto.Subscribe;
 
@@ -32,7 +33,7 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
     private ArrayList<EventCard> brotherHoodCards;
     private ArrayList<EventCard> socialCards;
 
-    @BindView(R2.id.fragment_about_us_recyclerView)
+    @BindView(R.id.fragment_about_us_recyclerView)
     RecyclerView recyclerView;
 
     private AboutUsAdapter adapter;
@@ -55,6 +56,7 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
         bus.post(new EventCardService.SearchCommunityServiceCardsRequest("Hello"));
         bus.post(new EventCardService.SearchBrotherHoodRequest("Hello"));
         bus.post(new EventCardService.SearchSocialCardRequest("Hello"));
+        System.out.println("Hello!");
         return rootView;
     }
 
@@ -67,9 +69,8 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
     @Override
     public void onEventCardClicked(EventCard eventCard) {
         if (!eventCard.isVideo()){
-            Log.i(AboutUsFragment.class.getSimpleName(),eventCard.getEventName() + " is in slide show");
-        } else {
-            Log.i(AboutUsFragment.class.getSimpleName(),eventCard.getEventName() + " is in video");
+            Intent intent = new Intent(PhotoPagerActivity.newInstance(getActivity(),eventCard));
+            startActivity(intent);
         }
     }
 

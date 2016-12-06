@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".ui.activities.BrotherPagerActivity"
                 android:theme="@style/CustomDialogActivity"/>
+        <activity android:name=".ui.activities.PhotoPagerActivity"
+            android:screenOrientation="behind"
+            android:theme="@style/CustomDialogActivity"/>
     </application>
 
 </manifest>

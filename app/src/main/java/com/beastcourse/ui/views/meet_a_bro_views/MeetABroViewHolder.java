@@ -7,14 +7,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.beastcourse.R;
-import com.beastcourse.R2;
 import com.beastcourse.entities.Brother;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.net.UnknownHostException;
 
@@ -27,9 +24,9 @@ import butterknife.ButterKnife;
 
 public class MeetABroViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R2.id.list_meet_a_bro_ImageView)
+    @BindView(R.id.list_meet_a_bro_ImageView)
     ImageView brotherPicture;
-    @BindView(R2.id.list_meet_a_bro_ProgressBar)
+    @BindView(R.id.list_meet_a_bro_ProgressBar)
     ProgressBar brotherProgressBar;
 
 

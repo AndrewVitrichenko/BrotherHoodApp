@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.beastcourse.R;
-import com.beastcourse.R2;
 import com.beastcourse.entities.EventPicture;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -21,15 +20,13 @@ import java.net.UnknownHostException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 03.12.2016.
- */
+
 
 public class EventPhotoFragment extends BaseFragment {
 
-    @BindView(R2.id.fragment_event_picture_image)
+    @BindView(R.id.fragment_event_picture_image)
     ImageView eventImage;
-    @BindView(R2.id.fragment_event_picture_progressBar)
+    @BindView(R.id.fragment_event_picture_progressBar)
     ProgressBar progressBar;
 
     public static final String EVENT_PHOTO_INFO = "EVENT_PHOTO_INFO";

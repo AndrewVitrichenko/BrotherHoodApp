@@ -84,14 +84,15 @@ public class AboutUsAdapter extends RecyclerView.Adapter {
                 return VIEW_TYPE_LIST_HEADER;
             }
             position--;
+
+
+            if (position < socialEventCards.size()) {
+                return VIEW_TYPE_SOCIAL_LIST;
+            }
+
+            position -= socialEventCards.size();
+
         }
-
-        if (position < socialEventCards.size()) {
-            return VIEW_TYPE_SOCIAL_LIST;
-        }
-
-        position -= socialEventCards.size();
-
         throw new IllegalArgumentException();
     }
 
