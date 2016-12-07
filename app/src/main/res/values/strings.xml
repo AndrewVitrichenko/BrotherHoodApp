@@ -11,4 +11,8 @@
     
     <string name="intro_header">Introduction</string>
     <string name="intro_body">This app was made by me and its super awesome!</string>
+
+    <string name="follow_us">Follow us on Social Media</string>
+    <string name="rush_intro">What is Rush?</string>
+    <string name="rush_explained">Rush is requirement</string>
 </resources>

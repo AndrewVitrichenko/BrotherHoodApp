@@ -3,31 +3,26 @@ package com.beastcourse.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
 /**
  * Created by Andrey on 29.09.2016.
  */
+@AllArgsConstructor(access = AccessLevel.PUBLIC,suppressConstructorProperties = true)
+@Getter
 public class Brother implements Parcelable {
 
-    @Getter private int brotherId;
-    @Getter private String brotherName;
-    @Getter private String brotherWhyJoin;
-    @Getter private String brotherPicture;
-    @Getter private String brotherMajor;
-    @Getter private String brotherCrossSemester;
-    @Getter private String brotherFunFact;
+    private int brotherId;
+    private String brotherName;
+    private String brotherWhyJoin;
+    private String brotherPicture;
+    private String brotherMajor;
+    private String brotherCrossSemester;
+    private String brotherFunFact;
 
-    public Brother(int brotherId, String brotherName, String brotherWhyJoin, String brotherPicture, String brotherMajor, String brotherCrossSemester, String brotherFunFact) {
-        this.brotherId = brotherId;
-        this.brotherName = brotherName;
-        this.brotherWhyJoin = brotherWhyJoin;
-        this.brotherPicture = brotherPicture;
-        this.brotherMajor = brotherMajor;
-        this.brotherCrossSemester = brotherCrossSemester;
-        this.brotherFunFact = brotherFunFact;
-    }
 
     protected Brother(Parcel in) {
         brotherId = in.readInt();

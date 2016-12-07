@@ -9,14 +9,15 @@ import lombok.Getter;
  * Created by Andrey on 09.11.2016.
  */
 @AllArgsConstructor(access = AccessLevel.PUBLIC,suppressConstructorProperties = true)
+@Getter
 public class EventCard {
 
-    @Getter private int eventId;
-    @Getter private String eventName;
-    @Getter private String eventDescription;
-    @Getter private String eventImage;
-    @Getter private boolean isVideo;
-    @Getter private String youtubeEnding;
+    private int eventId;
+    private String eventName;
+    private String eventDescription;
+    private String eventImage;
+    private boolean isVideo;
+    private String youtubeEnding;
 
 
 }
