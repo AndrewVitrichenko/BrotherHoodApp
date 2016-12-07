@@ -14,6 +14,7 @@ import com.beastcourse.entities.EventCard;
 import com.beastcourse.services.EventCardService;
 import com.beastcourse.ui.activities.BaseActivity;
 import com.beastcourse.ui.activities.PhotoPagerActivity;
+import com.beastcourse.ui.activities.YoutubeActivity;
 import com.beastcourse.ui.views.about_us_views.AboutUsAdapter;
 import com.squareup.otto.Subscribe;
 
@@ -56,7 +57,6 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
         bus.post(new EventCardService.SearchCommunityServiceCardsRequest("Hello"));
         bus.post(new EventCardService.SearchBrotherHoodRequest("Hello"));
         bus.post(new EventCardService.SearchSocialCardRequest("Hello"));
-        System.out.println("Hello!");
         return rootView;
     }
 
@@ -68,10 +68,13 @@ public class AboutUsFragment extends BaseFragment implements AboutUsAdapter.Abou
 
     @Override
     public void onEventCardClicked(EventCard eventCard) {
+        Intent intent;
         if (!eventCard.isVideo()){
-            Intent intent = new Intent(PhotoPagerActivity.newInstance(getActivity(),eventCard));
-            startActivity(intent);
+            intent = PhotoPagerActivity.newInstance(getActivity(),eventCard);
+        } else {
+            intent = YoutubeActivity.newInstance(getActivity(),eventCard);
         }
+        startActivity(intent);
     }
 
     @Subscribe

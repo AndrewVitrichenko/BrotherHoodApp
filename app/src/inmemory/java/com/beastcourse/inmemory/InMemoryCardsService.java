@@ -37,7 +37,7 @@ public class InMemoryCardsService extends BaseInMemory {
                 "Community Event 2`s description",
                 "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
                 true,
-                "null"
+                "-3bMERyIUWo"
         ));
 
         bus.post(response);
@@ -63,7 +63,7 @@ public class InMemoryCardsService extends BaseInMemory {
                 "BrotherHood Event 2`s description",
                 "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
                 true,
-                "null"
+                "h5EofwRzit0"
         ));
 
         bus.post(response);
@@ -89,7 +89,7 @@ public class InMemoryCardsService extends BaseInMemory {
                 "Social Event 2`s description",
                 "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
                 true,
-                "null"
+                "Z_Sf0gi-mGI"
         ));
 
         bus.post(response);

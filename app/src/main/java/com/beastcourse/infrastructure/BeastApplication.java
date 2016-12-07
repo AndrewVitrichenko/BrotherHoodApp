@@ -15,6 +15,8 @@ public class BeastApplication extends Application {
 
     @Getter private Bus bus;
 
+    public static final String YOUTUBE_API_KEY = "AIzaSyAEak8YzYMohi3RqbP_x1YmRT4IedkbAQc";
+
     public BeastApplication() {
         bus = new Bus();
     }
