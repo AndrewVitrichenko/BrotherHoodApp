@@ -1,5 +1,6 @@
 package com.beastcourse.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,8 @@ import com.beastcourse.R;
 import com.beastcourse.entities.RushEvent;
 import com.beastcourse.services.RushEventService;
 import com.beastcourse.ui.activities.BaseActivity;
+import com.beastcourse.ui.activities.CampusMapActivity;
+import com.beastcourse.ui.activities.MapsActivity;
 import com.beastcourse.ui.views.rush_views.Item;
 import com.beastcourse.ui.views.rush_views.RushEventAdapter;
 import com.squareup.otto.Subscribe;
@@ -46,6 +49,7 @@ public class RushFragment extends BaseFragment implements RushEventAdapter.RushE
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_rush,container,false);
         ButterKnife.bind(this,rootView);
+
         adapter = new RushEventAdapter((BaseActivity) getActivity(),this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
@@ -76,7 +80,13 @@ public class RushFragment extends BaseFragment implements RushEventAdapter.RushE
 
     @Override
     public void onRushEventClicked(RushEvent rushEvent) {
-
+        Intent intent;
+        if (!rushEvent.isOnCampus()){
+            intent = MapsActivity.newIntent(getActivity(),rushEvent);
+        } else {
+            intent = CampusMapActivity.newIntent(getActivity(),rushEvent);
+        }
+        startActivity(intent);
     }
 
     @Subscribe
