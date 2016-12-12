@@ -2,7 +2,7 @@ package com.beastcourse.infrastructure;
 
 import android.app.Application;
 
-import com.beastcourse.inmemory.Module;
+import com.beastcourse.live.Module;
 import com.squareup.otto.Bus;
 
 import lombok.Getter;

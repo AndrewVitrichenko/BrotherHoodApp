@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "150273145065",
+    "firebase_url": "https://brotherhood-151719.firebaseio.com",
+    "project_id": "brotherhood-151719",
+    "storage_bucket": "brotherhood-151719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150273145065:android:84f6181a22f45bce",
+        "android_client_info": {
+          "package_name": "com.beastcourse.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150273145065-8fnkddc4fu9nqaja1rkhpc6t0hq6c53i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.beastcourse.live",
+            "certificate_hash": "FC5ECEC1F906D7F50F412678D8704AF99250BAF2"
+          }
+        },
+        {
+          "client_id": "150273145065-m7vobp69s2v1r1e5tlstqcgjri78lvrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmmLUfd3ytTZ-PTiH-X8GkFiAhdsS3j8k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150273145065-m7vobp69s2v1r1e5tlstqcgjri78lvrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
