@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
+import com.beastcourse.infrastructure.BeastApplication;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.fragments.BrotherDetailFragment;
 import com.squareup.otto.Subscribe;
@@ -38,7 +39,7 @@ public class BrotherPagerActivity extends BaseActivity {
         setContentView(R.layout.activity_brother_pager);
         ButterKnife.bind(this);
         brothers = new ArrayList<>();
-        bus.post(new BrotherService.SearchBrotherRequest("Hello!"));
+        bus.post(new BrotherService.SearchBrotherRequest(BeastApplication.FIRE_BASE_BROTHER_REFERENCE));
         brotherViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -52,6 +53,15 @@ public class BrotherPagerActivity extends BaseActivity {
             }
         });
 
+    }
+
+
+    @Subscribe
+    public void getBrothers(BrotherService.SearchBrotherResponse response){
+        brothers.clear();
+        brothers.addAll(response.brothers);
+        brotherViewPager.getAdapter().notifyDataSetChanged();
+
         Brother brother = getIntent().getParcelableExtra(BROTHER_EXTRA_INFO);
         int brotherId = brother.getBrotherId();
 
@@ -61,13 +71,6 @@ public class BrotherPagerActivity extends BaseActivity {
                 break;
             }
         }
-    }
-
-
-    @Subscribe
-    public void getBrothers(BrotherService.SearchBrotherResponse response){
-        brothers.clear();
-        brothers.addAll(response.brothers);
     }
 
     public static Intent newIntent(Context context, Brother brother){

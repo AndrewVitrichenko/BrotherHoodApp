@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".infrastructure.BeastApplication">
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name=".ui.activities.PracticeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

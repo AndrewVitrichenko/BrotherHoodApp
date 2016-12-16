@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.Brother;
+import com.beastcourse.infrastructure.BeastApplication;
 import com.beastcourse.services.BrotherService;
 import com.beastcourse.ui.activities.BaseActivity;
 import com.beastcourse.ui.activities.BrotherPagerActivity;
@@ -42,7 +43,7 @@ public class MeetABroFragment extends BaseFragment implements MeetABroAdapter.On
         recyclerView = (RecyclerView) rootView.findViewById(R.id.fragment_meet_a_bro_recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         setUpAdapter();
-        bus.post(new BrotherService.SearchBrotherRequest("sdfsdf"));
+        bus.post(new BrotherService.SearchBrotherRequest(BeastApplication.FIRE_BASE_BROTHER_REFERENCE));
         return rootView;
     }
 
@@ -54,14 +55,19 @@ public class MeetABroFragment extends BaseFragment implements MeetABroAdapter.On
 
     @Override
     public void onBrotherClicked(Brother brother) {
-        Intent intent = BrotherPagerActivity.newIntent(getActivity(),brother);
+        Intent intent = BrotherPagerActivity.newIntent(getActivity(), brother);
         startActivity(intent);
     }
 
     @Subscribe
-    public void getBrothers(BrotherService.SearchBrotherResponse response){
-        brothers.clear();
-        brothers.addAll(response.brothers);
+    public void getBrothers(BrotherService.SearchBrotherResponse response) {
+        int oldSize = brothers.size();
+        if (oldSize == 0) {
+            brothers.clear();
+            adapter.notifyItemRangeRemoved(0, oldSize);
+            brothers.addAll(response.brothers);
+            adapter.notifyItemRangeChanged(0, brothers.size());
+        }
     }
 
 }
