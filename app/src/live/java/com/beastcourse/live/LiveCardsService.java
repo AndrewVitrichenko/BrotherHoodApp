@@ -1,17 +1,20 @@
 package com.beastcourse.live;
 
 import com.beastcourse.entities.EventCard;
+import com.beastcourse.entities.firebaseEntities.EventCardFireBase;
 import com.beastcourse.infrastructure.BeastApplication;
 import com.beastcourse.services.EventCardService;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
 
 public class LiveCardsService extends BaseLiveService {
+
 
     public LiveCardsService(BeastApplication application) {
         super(application);
@@ -19,79 +22,117 @@ public class LiveCardsService extends BaseLiveService {
 
     @Subscribe
     public void searchCommunityCards(EventCardService.SearchCommunityServiceCardsRequest request) {
-        EventCardService.SearchCommunityServiceCardsResponse response = new EventCardService.SearchCommunityServiceCardsResponse();
+        final EventCardService.SearchCommunityServiceCardsResponse response = new EventCardService.SearchCommunityServiceCardsResponse();
         response.communityServiceCards = new ArrayList<>();
 
-        response.communityServiceCards.add(new EventCard(
-                1,
-                "Community Event 1",
-                "Community Event 1`s description",
-                "http://www.gravatar.com/avatar/" + 1 + "?id=identicon",
-                false,
-                "null"
-        ));
+        Firebase reference = new Firebase(request.fireBaseUrl);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int index = 1;
 
-        response.communityServiceCards.add(new EventCard(
-                2,
-                "Community Event 2",
-                "Community Event 2`s description",
-                "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
-                true,
-                "-3bMERyIUWo"
-        ));
+                EventCardFireBase eventCardFireBase;
+                EventCard eventCard;
 
-        bus.post(response);
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    eventCardFireBase = dataSnapshot1.getValue(EventCardFireBase.class);
+
+                    eventCard = new EventCard(
+                            index,
+                            eventCardFireBase.getTitle(),
+                            eventCardFireBase.getDescription(),
+                            eventCardFireBase.getPicture(),
+                            eventCardFireBase.isVideo(),
+                            eventCardFireBase.getUrl()
+
+                    );
+
+                    response.communityServiceCards.add(eventCard);
+                    index++;
+                }
+                bus.post(response);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
     }
 
     @Subscribe
     public void searchBrotherHoodCards(EventCardService.SearchBrotherHoodRequest request) {
-        EventCardService.SearchBrotherHoodResponse response = new EventCardService.SearchBrotherHoodResponse();
+        final EventCardService.SearchBrotherHoodResponse response = new EventCardService.SearchBrotherHoodResponse();
         response.brotherHoodCards = new ArrayList<>();
+        Firebase reference = new Firebase(request.fireBaseUrl);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int index = 3;
+                EventCardFireBase eventCardFireBase;
+                EventCard eventCard;
 
-        response.brotherHoodCards.add(new EventCard(
-                3,
-                "BrotherHood Event 1",
-                "BrotherHood Event 1`s description",
-                "http://www.gravatar.com/avatar/" + 1 + "?id=identicon",
-                false,
-                "null"
-        ));
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    eventCardFireBase = dataSnapshot1.getValue(EventCardFireBase.class);
 
-        response.brotherHoodCards.add(new EventCard(
-                4,
-                "BrotherHood Event 2",
-                "BrotherHood Event 2`s description",
-                "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
-                true,
-                "h5EofwRzit0"
-        ));
+                    eventCard = new EventCard(
+                            index,
+                            eventCardFireBase.getTitle(),
+                            eventCardFireBase.getDescription(),
+                            eventCardFireBase.getPicture(),
+                            eventCardFireBase.isVideo(),
+                            eventCardFireBase.getUrl()
 
-        bus.post(response);
+                    );
+
+                    response.brotherHoodCards.add(eventCard);
+                    index++;
+                }
+                bus.post(response);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
     @Subscribe
     public void searchSocialCards(EventCardService.SearchSocialCardRequest request) {
-        EventCardService.SearchSocialCardResponse response = new EventCardService.SearchSocialCardResponse();
+        final EventCardService.SearchSocialCardResponse response = new EventCardService.SearchSocialCardResponse();
         response.socialCards = new ArrayList<>();
+        Firebase reference = new Firebase(request.fireBaseUrl);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int index = 5;
+                EventCardFireBase eventCardFireBase;
+                EventCard eventCard;
 
-        response.socialCards.add(new EventCard(
-                5,
-                "Social Event 1",
-                "Social Event 1`s description",
-                "http://www.gravatar.com/avatar/" + 1 + "?id=identicon",
-                false,
-                "null"
-        ));
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    eventCardFireBase = dataSnapshot1.getValue(EventCardFireBase.class);
 
-        response.socialCards.add(new EventCard(
-                6,
-                "Social Event 2",
-                "Social Event 2`s description",
-                "http://www.gravatar.com/avatar/" + 2 + "?id=identicon",
-                true,
-                "Z_Sf0gi-mGI"
-        ));
+                    eventCard = new EventCard(
+                            index,
+                            eventCardFireBase.getTitle(),
+                            eventCardFireBase.getDescription(),
+                            eventCardFireBase.getPicture(),
+                            eventCardFireBase.isVideo(),
+                            eventCardFireBase.getUrl()
+                    );
 
-        bus.post(response);
+                    response.socialCards.add(eventCard);
+                    index++;
+                }
+                bus.post(response);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 }

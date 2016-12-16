@@ -7,9 +7,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-/**
- * Created by Andrey on 07.12.2016.
- */
 
 @AllArgsConstructor(access = AccessLevel.PUBLIC,suppressConstructorProperties = true)
 @Getter

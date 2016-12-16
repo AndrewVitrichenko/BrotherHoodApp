@@ -5,9 +5,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.otto.Bus;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
 
 public class BaseLiveService {
     protected final Bus bus;

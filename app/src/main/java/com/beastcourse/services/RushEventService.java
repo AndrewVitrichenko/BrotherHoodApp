@@ -4,10 +4,6 @@ import com.beastcourse.entities.RushEvent;
 
 import java.util.List;
 
-/**
- * Created by Andrey on 11.12.2016.
- */
-
 public class RushEventService {
 
     public static class SearchRushEventsCommunityRequest{

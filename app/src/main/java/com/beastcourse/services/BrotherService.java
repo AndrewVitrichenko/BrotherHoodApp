@@ -4,10 +4,6 @@ import com.beastcourse.entities.Brother;
 
 import java.util.List;
 
-/**
- * Created by Andrey on 02.10.2016.
- */
-
 public class BrotherService {
 
     public BrotherService(){

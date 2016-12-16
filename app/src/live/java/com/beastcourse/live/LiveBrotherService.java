@@ -12,9 +12,6 @@ import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
 
 public class LiveBrotherService extends BaseLiveService {
 
@@ -31,10 +28,12 @@ public class LiveBrotherService extends BaseLiveService {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int index = 0;
+                BrotherFireBase brotherFireBase;
+                Brother brother;
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    BrotherFireBase brotherFireBase = dataSnapshot1.getValue(BrotherFireBase.class);
+                    brotherFireBase = dataSnapshot1.getValue(BrotherFireBase.class);
 
-                    Brother brother = new Brother(
+                   brother = new Brother(
                             index,
                             brotherFireBase.getName(),
                             brotherFireBase.getWhyJoined(),

@@ -4,9 +4,6 @@ import com.beastcourse.entities.EventPicture;
 
 import java.util.List;
 
-/**
- * Created by Andrey on 03.12.2016.
- */
 
 public class EventPhotoService {
 

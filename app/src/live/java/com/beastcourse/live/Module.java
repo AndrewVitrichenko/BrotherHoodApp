@@ -2,9 +2,6 @@ package com.beastcourse.live;
 
 import com.beastcourse.infrastructure.BeastApplication;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
 
 public class Module {
 

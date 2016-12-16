@@ -24,9 +24,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 29.09.2016.
- */
 
 public class RushFragment extends BaseFragment implements RushEventAdapter.RushEventListener {
 

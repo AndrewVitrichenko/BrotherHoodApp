@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.RushEvent;
@@ -22,9 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 11.12.2016.
- */
 
 public class MapsActivity extends BaseActivity {
 

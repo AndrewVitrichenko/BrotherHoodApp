@@ -4,9 +4,6 @@ import com.beastcourse.entities.RushEvent;
 
 import java.util.List;
 
-/**
- * Created by Andrey on 09.12.2016.
- */
 
 public class Item {
 

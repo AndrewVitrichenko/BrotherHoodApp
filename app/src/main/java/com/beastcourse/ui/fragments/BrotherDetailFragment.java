@@ -21,9 +21,6 @@ import java.net.UnknownHostException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 07.11.2016.
- */
 
 public class BrotherDetailFragment extends BaseFragment {
 

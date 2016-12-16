@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import com.beastcourse.R;
 import com.beastcourse.entities.EventCard;
 import com.beastcourse.entities.EventPicture;
+import com.beastcourse.infrastructure.BeastApplication;
 import com.beastcourse.services.EventPhotoService;
 import com.beastcourse.ui.fragments.EventPhotoFragment;
 import com.squareup.otto.Subscribe;
@@ -19,9 +20,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 03.12.2016.
- */
 
 public class PhotoPagerActivity extends BaseActivity {
 
@@ -41,13 +39,13 @@ public class PhotoPagerActivity extends BaseActivity {
 
         switch (cardId){
             case 1:
-                bus.post(new EventPhotoService.SearchCommunityPhotoRequest("Hello"));
+                bus.post(new EventPhotoService.SearchCommunityPhotoRequest(BeastApplication.FIRE_BASE_EVENT_PHOTOS_COMMUNITY_REFERENCE));
                 break;
             case 3:
-                bus.post(new EventPhotoService.SearchBrotherHoodPhotoRequest("Hello!"));
+                bus.post(new EventPhotoService.SearchBrotherHoodPhotoRequest(BeastApplication.FIRE_BASE_EVENT_PHOTOS_BROTHERHOOD_REFERENCE));
                 break;
             case 5:
-                bus.post(new EventPhotoService.SearchSocialPhotosRequest("Hello"));
+                bus.post(new EventPhotoService.SearchSocialPhotosRequest(BeastApplication.FIRE_BASE_EVENT_PHOTOS_SOCIAL_REFERENCE));
                 break;
         }
 
@@ -75,15 +73,18 @@ public class PhotoPagerActivity extends BaseActivity {
     public void getCommunityPhotos(EventPhotoService.SearchCommunityPhotoResponse response){
         mEventPhotos.clear();
         mEventPhotos.addAll(response.communityPhotos);
+        viewPager.getAdapter().notifyDataSetChanged();
     }
     @Subscribe
     public void getBrotherHoodPhotos(EventPhotoService.SearchBrotherHoodResponse response){
         mEventPhotos.clear();
         mEventPhotos.addAll(response.brotherHoodPhotos);
+        viewPager.getAdapter().notifyDataSetChanged();
     }
     @Subscribe
     public void getSocialPhotos(EventPhotoService.SearchSocialPhotosResponse response){
         mEventPhotos.clear();
         mEventPhotos.addAll(response.socialPhotos);
+        viewPager.getAdapter().notifyDataSetChanged();
     }
 }

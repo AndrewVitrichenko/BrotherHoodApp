@@ -13,9 +13,6 @@ import java.util.ArrayList;
 
 import lombok.Getter;
 
-/**
- * Created by Andrey on 29.09.2016.
- */
 
 public class MeetABroAdapter extends RecyclerView.Adapter<MeetABroViewHolder> implements View.OnClickListener {
     private LayoutInflater inflater;

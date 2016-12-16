@@ -8,9 +8,6 @@ import com.beastcourse.ui.fragments.AboutUsFragment;
 import com.beastcourse.ui.fragments.MeetABroFragment;
 import com.beastcourse.ui.fragments.RushFragment;
 
-/**
- * Created by Andrey on 29.09.2016.
- */
 
 public class MainActivityViewPager extends FragmentStatePagerAdapter {
 

@@ -19,9 +19,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 09.11.2016.
- */
 
 public class BrotherPagerActivity extends BaseActivity {
 

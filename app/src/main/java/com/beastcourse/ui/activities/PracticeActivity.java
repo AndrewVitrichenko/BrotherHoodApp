@@ -11,10 +11,6 @@ import com.beastcourse.entities.Brother;
 import com.beastcourse.ui.fragments.AboutUsFragment;
 import com.beastcourse.ui.fragments.MeetABroFragment;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
-
 public class PracticeActivity extends BaseActivity {
 
     public static final String BROTHER_EXTRA_INFO = "BROTHER_EXTRA_INFO";

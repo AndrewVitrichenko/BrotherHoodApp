@@ -10,9 +10,7 @@ import com.beastcourse.entities.RushEvent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 09.12.2016.
- */
+
 
 public class RushEventsHolder extends RecyclerView.ViewHolder {
 

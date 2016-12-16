@@ -18,9 +18,6 @@ import com.beastcourse.entities.RushEvent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 11.12.2016.
- */
 
 public class CampusMapActivity extends BaseActivity {
 

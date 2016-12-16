@@ -4,9 +4,6 @@ import com.beastcourse.entities.EventCard;
 
 import java.util.List;
 
-/**
- * Created by Andrey on 01.12.2016.
- */
 
 public class EventCardService {
 

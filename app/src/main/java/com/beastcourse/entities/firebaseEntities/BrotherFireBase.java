@@ -2,9 +2,7 @@ package com.beastcourse.entities.firebaseEntities;
 
 import lombok.Getter;
 
-/**
- * Created by Andrey on 13.12.2016.
- */
+
 @Getter
 public class BrotherFireBase {
 

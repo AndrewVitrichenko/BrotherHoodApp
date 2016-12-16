@@ -1,6 +1,5 @@
 package com.beastcourse.ui.views.rush_views;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -14,9 +13,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Andrey on 09.12.2016.
- */
 
 public class RushFooterHolder extends RecyclerView.ViewHolder {
 

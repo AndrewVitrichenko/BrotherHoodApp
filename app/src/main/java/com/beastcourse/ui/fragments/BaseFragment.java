@@ -7,9 +7,6 @@ import android.support.v4.app.Fragment;
 import com.beastcourse.infrastructure.BeastApplication;
 import com.squareup.otto.Bus;
 
-/**
- * Created by Andrey on 02.10.2016.
- */
 
 public class BaseFragment extends Fragment {
 

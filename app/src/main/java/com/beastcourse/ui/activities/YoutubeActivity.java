@@ -15,9 +15,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 07.12.2016.
- */
 
 public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 

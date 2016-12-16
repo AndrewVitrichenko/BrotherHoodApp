@@ -14,9 +14,6 @@ import java.util.List;
 
 import lombok.Getter;
 
-/**
- * Created by Andrey on 10.12.2016.
- */
 
 public class RushEventAdapter extends RecyclerView.Adapter {
 

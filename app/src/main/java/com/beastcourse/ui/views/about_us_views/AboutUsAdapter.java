@@ -13,9 +13,6 @@ import java.util.ArrayList;
 
 import lombok.Getter;
 
-/**
- * Created by Andrey on 10.11.2016.
- */
 
 public class AboutUsAdapter extends RecyclerView.Adapter {
 
@@ -205,7 +202,7 @@ public class AboutUsAdapter extends RecyclerView.Adapter {
             }
 
             if (position == socialPosition) {
-                aboutUsListHeaderViewHolder.populate("Social position");
+                aboutUsListHeaderViewHolder.populate("Social Events");
             }
         }
 

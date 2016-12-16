@@ -19,9 +19,6 @@ import java.net.UnknownHostException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Andrey on 10.11.2016.
- */
 
 public class CommunityServiceViewHolder extends RecyclerView.ViewHolder {
 

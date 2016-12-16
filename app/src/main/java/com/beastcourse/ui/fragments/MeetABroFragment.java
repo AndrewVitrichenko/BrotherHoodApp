@@ -21,9 +21,6 @@ import com.squareup.otto.Subscribe;
 import java.util.ArrayList;
 
 
-/**
- * Created by Andrey on 29.09.2016.
- */
 
 public class MeetABroFragment extends BaseFragment implements MeetABroAdapter.OnBrotherClickedListener {
 

@@ -7,9 +7,6 @@ import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 
-/**
- * Created by Andrey on 12.12.2016.
- */
 
 public class LiveRushEventsService extends BaseLiveService {
 
