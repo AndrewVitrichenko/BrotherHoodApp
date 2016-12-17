@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/TextHeaderBackground"
         android:layout_marginTop="10dp">
 
         <TextView
@@ -17,7 +17,8 @@
             android:layout_centerInParent="true"
             android:text="@string/intro_header"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
     </RelativeLayout>
 

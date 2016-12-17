@@ -7,8 +7,7 @@
     <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        style="@style/TextHeaderBackground">
 
         <TextView
             android:layout_width="wrap_content"
@@ -16,7 +15,8 @@
             android:layout_centerInParent="true"
             android:text="@string/rush_intro"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
     </RelativeLayout>
 
@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rush_explained"
+        style="@style/TextHeaderBackground"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
@@ -36,8 +37,7 @@
     <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        style="@style/TextHeaderBackground">
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,7 +45,8 @@
             android:layout_centerInParent="true"
             android:text="@string/rush_events"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
     </RelativeLayout>
 

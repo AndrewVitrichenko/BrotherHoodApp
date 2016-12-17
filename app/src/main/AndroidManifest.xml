@@ -9,8 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".infrastructure.BeastApplication">
-        <activity android:name=".ui.activities.MainActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".ui.activities.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.BrotherPagerActivity"
+            android:screenOrientation="portrait"
                 android:theme="@style/CustomDialogActivity"/>
+        <activity android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.activities.PhotoPagerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/CustomDialogActivity"/>
@@ -26,9 +30,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/YoutubeDialog"/>
         <activity android:name=".ui.activities.MapsActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".ui.activities.CampusMapActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
