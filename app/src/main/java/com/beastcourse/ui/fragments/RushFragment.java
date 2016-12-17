@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.beastcourse.R;
 import com.beastcourse.entities.RushEvent;
+import com.beastcourse.infrastructure.BeastApplication;
 import com.beastcourse.services.RushEventService;
 import com.beastcourse.ui.activities.BaseActivity;
 import com.beastcourse.ui.activities.CampusMapActivity;
@@ -38,29 +39,29 @@ public class RushFragment extends BaseFragment implements RushEventAdapter.RushE
     private Item communityItem;
 
 
-    public static RushFragment newInstance(){
+    public static RushFragment newInstance() {
         return new RushFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_rush,container,false);
-        ButterKnife.bind(this,rootView);
+        View rootView = inflater.inflate(R.layout.fragment_rush, container, false);
+        ButterKnife.bind(this, rootView);
 
-        adapter = new RushEventAdapter((BaseActivity) getActivity(),this);
+        adapter = new RushEventAdapter((BaseActivity) getActivity(), this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
         communityEvents = new ArrayList<>();
         socialEvents = new ArrayList<>();
         List<Item> data = adapter.getData();
 
-        socialItem = new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_HEADER,"Social Events");
+        socialItem = new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_HEADER, "Social Events");
         socialItem.invisibleChildren = new ArrayList<>();
-        communityItem = new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_HEADER,"Community Events");
+        communityItem = new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_HEADER, "Community Events");
         communityItem.invisibleChildren = new ArrayList<>();
 
-        bus.post(new RushEventService.SearchRushEventsCommunityRequest("Hello!"));
-        bus.post(new RushEventService.SearchRushEventsSocialRequest("Hello!"));
+        bus.post(new RushEventService.SearchRushEventsCommunityRequest(BeastApplication.FIRE_BASE_RUSH_EVENTS_COMMUNITY));
+        bus.post(new RushEventService.SearchRushEventsSocialRequest(BeastApplication.FIRE_BASE_RUSH_EVENTS_SOCIAL));
         setUpAdapter();
 
         data.add(communityItem);
@@ -69,8 +70,8 @@ public class RushFragment extends BaseFragment implements RushEventAdapter.RushE
         return rootView;
     }
 
-    public void setUpAdapter(){
-        if (isAdded()){
+    public void setUpAdapter() {
+        if (isAdded()) {
             recyclerView.setAdapter(adapter);
         }
     }
@@ -78,29 +79,29 @@ public class RushFragment extends BaseFragment implements RushEventAdapter.RushE
     @Override
     public void onRushEventClicked(RushEvent rushEvent) {
         Intent intent;
-        if (!rushEvent.isOnCampus()){
-            intent = MapsActivity.newIntent(getActivity(),rushEvent);
+        if (!rushEvent.isOnCampus()) {
+            intent = MapsActivity.newIntent(getActivity(), rushEvent);
         } else {
-            intent = CampusMapActivity.newIntent(getActivity(),rushEvent);
+            intent = CampusMapActivity.newIntent(getActivity(), rushEvent);
         }
         startActivity(intent);
     }
 
     @Subscribe
-    public void getCommunityEvents(RushEventService.SearchRushEventsCommunityResponse response){
+    public void getCommunityEvents(RushEventService.SearchRushEventsCommunityResponse response) {
         communityEvents.clear();
         communityEvents.addAll(response.communityRushEvents);
-        for (RushEvent rushEvent : communityEvents){
-            communityItem.invisibleChildren.add(new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_CHILD,rushEvent));
+        for (RushEvent rushEvent : communityEvents) {
+            communityItem.invisibleChildren.add(new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_CHILD, rushEvent));
         }
     }
 
     @Subscribe
-    public void getSocialEvents(RushEventService.SearchRushEventsSocialResponse response){
+    public void getSocialEvents(RushEventService.SearchRushEventsSocialResponse response) {
         socialEvents.clear();
         socialEvents.addAll(response.socialRushEvents);
-        for (RushEvent rushEvent : socialEvents){
-            socialItem.invisibleChildren.add(new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_CHILD,rushEvent));
+        for (RushEvent rushEvent : socialEvents) {
+            socialItem.invisibleChildren.add(new Item(RushEventAdapter.VIEW_TYPE_EXPANDABLE_LIST_CHILD, rushEvent));
         }
     }
 }

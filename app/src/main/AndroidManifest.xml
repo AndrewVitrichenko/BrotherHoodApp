@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".infrastructure.BeastApplication">
-        <activity android:name=".ui.activities.PracticeActivity">
+        <activity android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
